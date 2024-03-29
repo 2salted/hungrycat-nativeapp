@@ -18,9 +18,11 @@ const Cat = (props: catProps) => {
           setIsHungry(false);
           setInterval(() => {
             setIsHungry(true);
-          }, 5000);
+          }, 8000);
         }}
-        title={isHungry ? "Press button to feed the cats" : "The cats are fed"}
+        title={
+          isHungry ? `press button to feed ${props.name}` : `${props.name} has been fed`
+        }
       />
     </SafeAreaView>
   );

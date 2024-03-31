@@ -1,7 +1,9 @@
 import SearchBar from "@/components/SearchBar";
 import { Stack, useRouter } from "expo-router";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
-import { Text, TouchableOpacity, View, SafeAreaView } from "react-native";
+import { Text, View, SafeAreaView } from "react-native";
+import LeftScreenBtn from '@/components/LeftScreenBtn'
+import RightScreenBtn from "@/components/RightScreentBtn";
 
 export default function Home() {
   const router = useRouter();
@@ -18,13 +20,18 @@ export default function Home() {
         options={{
           headerTitle: "",
           headerShadowVisible: false,
+          headerLeft: () => (
+            <LeftScreenBtn />
+          ),
+          headerRight: () => (
+            <RightScreenBtn />
+          )
         }}
       />
-      <View>
+      <View style={{ paddingTop: 30 }}>
         <Text
           style={{
             fontSize: 25,
-            paddingHorizontal: 10,
             textAlign: "center",
           }}
         >

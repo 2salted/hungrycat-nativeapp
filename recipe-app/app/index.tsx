@@ -4,6 +4,7 @@ import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import { Text, View, SafeAreaView } from "react-native";
 import LeftScreenBtn from '@/components/LeftScreenBtn'
 import RightScreenBtn from "@/components/RightScreentBtn";
+import ScrollViewSelect from "@/components/ScrollViewSelect";
 
 export default function Home() {
   const router = useRouter();
@@ -38,6 +39,7 @@ export default function Home() {
           Search any cooking recipe
         </Text>
         <SearchBar />
+        <ScrollViewSelect />
       </View>
     </SafeAreaView>
   );

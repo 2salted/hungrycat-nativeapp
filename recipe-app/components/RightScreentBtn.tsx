@@ -1,19 +1,18 @@
 import { Image, SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function RightScreenBtn() {
   return (
     <SafeAreaView style={{
       flexDirection: 'row',
     }}>
-      <View>
+      <View style={{
+        padding: 5,
+      }}>
         <TouchableOpacity>
-          <Image style={{
-            width: 50,
-            height: 50,
-            borderRadius: 12,
-          }}
-            resizeMode="contain"
-            source={require('../assets/images/kemal.jpg')} />
+          <FontAwesome style={{
+            fontSize: 40,
+          }} name="user-o" />
         </TouchableOpacity>
       </View>
     </SafeAreaView>

@@ -1,3 +1,4 @@
+import { FontAwesome } from "@expo/vector-icons";
 import { Image, SafeAreaView, Text, TouchableOpacity, View } from "react-native";
 
 export default function LeftScreenBtn() {
@@ -6,18 +7,12 @@ export default function LeftScreenBtn() {
       flexDirection: 'row',
     }}>
       <View style={{
-        backgroundColor: "#f5f5f5",
         padding: 5,
-        borderRadius: 12,
       }}>
         <TouchableOpacity>
-          <Image
-            resizeMode="contain"
-            style={{
-              width: 40,
-              height: 40,
-            }}
-            source={require('../assets/images/menu.png')} />
+          <FontAwesome style={{
+            fontSize: 40,
+          }} name="bars" />
         </TouchableOpacity>
       </View>
     </SafeAreaView>

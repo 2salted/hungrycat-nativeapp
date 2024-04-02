@@ -5,6 +5,7 @@ import { Text, View, SafeAreaView } from "react-native";
 import LeftScreenBtn from '@/components/LeftScreenBtn'
 import RightScreenBtn from "@/components/RightScreentBtn";
 import ScrollViewSelect from "@/components/ScrollViewSelect";
+import WeeklyRecipes from "@/components/WeeklyRecipes";
 
 export default function Home() {
   const router = useRouter();
@@ -40,6 +41,16 @@ export default function Home() {
         </Text>
         <SearchBar />
         <ScrollViewSelect />
+      </View>
+      <View style={{
+        paddingTop: 30,
+        paddingHorizontal: 15
+      }}>
+        <Text style={{
+          textAlign: "center",
+          fontSize: 20,
+        }}>Top Weekly Recipes!</Text>
+        <WeeklyRecipes />
       </View>
     </SafeAreaView>
   );

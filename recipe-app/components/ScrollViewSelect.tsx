@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function ScrollViewSelect() {
   let scrollItems = [
@@ -10,6 +10,7 @@ export default function ScrollViewSelect() {
     { selectItem: 'Italian recipes' },
     { selectItem: 'Mexican recipes' },
   ]
+
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
       <View style={{
@@ -24,10 +25,10 @@ export default function ScrollViewSelect() {
             }}>
               <TouchableOpacity
                 style={{
-                  borderWidth: 1,
                   paddingVertical: 8,
                   paddingHorizontal: 12,
-                  borderRadius: 20
+                  borderRadius: 20,
+                  backgroundColor: '#f2f2f2'
                 }}>
                 <Text>{item.selectItem}</Text>
               </TouchableOpacity>

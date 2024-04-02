@@ -35,7 +35,7 @@ export default function SearchBar() {
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#Fda6a6",
+            backgroundColor: "#E55451",
             borderStartEndRadius: 30,
             borderEndEndRadius: 30,
           }}

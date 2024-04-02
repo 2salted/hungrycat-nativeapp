@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { FullWindowOverlay } from "react-native-screens";
 
 export default function WeeklyRecipes() {
   let weeklyRecipesList = [
@@ -60,16 +59,20 @@ export default function WeeklyRecipes() {
                     style={{
                       width: 300,
                       height: 200,
+                      borderRadius: 12,
+                      shadowColor: "#838383",
                     }}
                   />
+                  <Text
+                    style={{
+                      paddingVertical: 12,
+                      fontSize: 18,
+                      textAlign: "center",
+                    }}
+                  >
+                    {recipe.title}
+                  </Text>
                 </TouchableOpacity>
-                <Text
-                  style={{
-                    padding: 10,
-                  }}
-                >
-                  {recipe.title}
-                </Text>
               </View>
             </View>
           );

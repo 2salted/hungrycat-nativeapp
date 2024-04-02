@@ -60,7 +60,6 @@ export default function WeeklyRecipes() {
                       width: 300,
                       height: 200,
                       borderRadius: 12,
-                      shadowColor: "#838383",
                     }}
                   />
                   <Text

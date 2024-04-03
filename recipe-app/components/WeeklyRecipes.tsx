@@ -1,13 +1,10 @@
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import axios, { Axios } from "axios";
+import { useEffect, useState } from "react";
 
 export default function WeeklyRecipes() {
+  const [meals, setMeals] = useState();
+
   let weeklyRecipesList = [
     {
       title: "Goldenrod Egg",
@@ -39,6 +36,8 @@ export default function WeeklyRecipes() {
   newArr = weeklyRecipesList.splice(0, 2);
   console.log(newArr);
 
+  useEffect(() => {}, []);
+
   return (
     <ScrollView>
       <View>
@@ -52,13 +51,13 @@ export default function WeeklyRecipes() {
                   alignItems: "center",
                 }}
               >
-                <TouchableOpacity>
+                <Pressable>
                   <Image
                     resizeMode="cover"
                     source={recipe.image}
                     style={{
                       width: 300,
-                      height: 200,
+                      height: 170,
                       borderRadius: 12,
                     }}
                   />
@@ -71,7 +70,7 @@ export default function WeeklyRecipes() {
                   >
                     {recipe.title}
                   </Text>
-                </TouchableOpacity>
+                </Pressable>
               </View>
             </View>
           );

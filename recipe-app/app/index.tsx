@@ -6,10 +6,12 @@ import LeftScreenBtn from "@/components/LeftScreenBtn";
 import RightScreenBtn from "@/components/RightScreentBtn";
 import ScrollViewSelect from "@/components/ScrollViewSelect";
 import WeeklyRecipes from "@/components/WeeklyRecipes";
+import { useState } from "react";
+import ItemList from "@/components/ItemList";
 
 export default function Home() {
   const router = useRouter();
-
+  const [searching, setSearching] = useState(false);
   return (
     <SafeAreaView
       style={{
@@ -35,7 +37,7 @@ export default function Home() {
         >
           Search any cooking recipe
         </Text>
-        <SearchBar />
+        <SearchBar setIsSearching={setSearching} />
         <ScrollViewSelect />
       </View>
       <View
@@ -44,16 +46,22 @@ export default function Home() {
           paddingHorizontal: 15,
         }}
       >
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: 22,
-            paddingBottom: 15,
-          }}
-        >
-          Top Weekly Recipes!
-        </Text>
-        <WeeklyRecipes />
+        {searching ? (
+          <ItemList />
+        ) : (
+          <View>
+            <Text
+              style={{
+                textAlign: "center",
+                fontSize: 22,
+                paddingBottom: 15,
+              }}
+            >
+              Top Weekly Recipes!
+            </Text>
+            <WeeklyRecipes />
+          </View>
+        )}
       </View>
     </SafeAreaView>
   );

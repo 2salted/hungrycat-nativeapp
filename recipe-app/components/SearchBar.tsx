@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Image, TextInput, TouchableOpacity, View } from "react-native";
 
-export default function SearchBar() {
+type props = {
+  setIsSearching: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function SearchBar({ setIsSearching }: props) {
   const [searchQuery, setSearchQuery] = useState("");
-  console.log(searchQuery);
 
   return (
     <View
@@ -28,7 +31,14 @@ export default function SearchBar() {
             padding: 12,
             fontSize: 16,
           }}
-          onChangeText={(userInput) => setSearchQuery(userInput)}
+          onChangeText={(userInput) => {
+            setSearchQuery(userInput);
+            if (userInput !== "") {
+              setIsSearching(true);
+            } else {
+              setIsSearching(false);
+            }
+          }}
         />
       </View>
       <View

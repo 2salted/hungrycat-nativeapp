@@ -1,10 +1,6 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
-import axios, { Axios } from "axios";
-import { useEffect, useState } from "react";
 
 export default function WeeklyRecipes() {
-  const [meals, setMeals] = useState();
-
   let weeklyRecipesList = [
     {
       title: "Goldenrod Egg",
@@ -34,9 +30,6 @@ export default function WeeklyRecipes() {
 
   shuffle(weeklyRecipesList);
   newArr = weeklyRecipesList.splice(0, 2);
-  console.log(newArr);
-
-  useEffect(() => {}, []);
 
   return (
     <ScrollView>

@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Image, TextInput, TouchableOpacity, View } from "react-native";
 
 export default function SearchBar() {
+  const [searchQuery, setSearchQuery] = useState("");
+  console.log(searchQuery);
+
   return (
     <View
       style={{
@@ -16,6 +20,7 @@ export default function SearchBar() {
         <TextInput
           placeholder="Search for any recipe..."
           placeholderTextColor="#8e8e8e"
+          value={searchQuery}
           style={{
             backgroundColor: "#f5f5f5",
             borderStartStartRadius: 30,
@@ -23,6 +28,7 @@ export default function SearchBar() {
             padding: 12,
             fontSize: 16,
           }}
+          onChangeText={(userInput) => setSearchQuery(userInput)}
         />
       </View>
       <View

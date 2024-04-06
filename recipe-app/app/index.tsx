@@ -45,7 +45,6 @@ export default function Home() {
       </View>
       <View
         style={{
-          paddingTop: 30,
           paddingHorizontal: 15,
         }}
       >

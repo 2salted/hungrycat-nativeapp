@@ -8,62 +8,24 @@ import {
   View,
 } from "react-native";
 import { recipeData } from "./recipedata";
+import { useState } from "react";
 
-export default function ItemList() {
+type props = {
+  searchQueryTest: string;
+}
+
+export default function ItemList({ searchQueryTest }: props) {
+  let matchedQuery = recipeData.filter((item) => item.title.toLowerCase().includes(searchQueryTest.toLowerCase()))
+  console.log(matchedQuery)
+
   return (
     <ScrollView>
-      {recipeData.map((recipe, index) => {
+      {matchedQuery.map((item, index) => {
         return (
-          <TouchableOpacity
-            key={index}
-            style={{
-              flexDirection: "row",
-              width: 230,
-              paddingVertical: 15,
-              paddingLeft: 5,
-            }}
-          >
-            <View style={{}}>
-              <Image
-                style={{
-                  width: 130,
-                  height: 170,
-                  borderRadius: 18,
-                }}
-                source={recipe.image}
-              />
-            </View>
-            <View
-              style={{
-                padding: 15,
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-              }}
-            >
-              <Text
-                numberOfLines={1}
-                style={{
-                  flex: 1,
-                  fontSize: 18,
-                  fontWeight: "600",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
-                }}
-              >
-                {recipe.title}
-              </Text>
-              <Text
-                style={{
-                  flex: 1,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {recipe.titleDescription}
-              </Text>
-            </View>
+          <TouchableOpacity key={index}>
+            <Text>{item.title}</Text>
           </TouchableOpacity>
-        );
+        )
       })}
     </ScrollView>
   );

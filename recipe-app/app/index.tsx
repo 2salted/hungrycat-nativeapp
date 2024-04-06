@@ -8,10 +8,13 @@ import ScrollViewSelect from "@/components/ScrollViewSelect";
 import WeeklyRecipes from "@/components/WeeklyRecipes";
 import { useState } from "react";
 import ItemList from "@/components/ItemList";
+import { recipeData } from "@/components/recipedata";
 
 export default function Home() {
   const router = useRouter();
   const [searching, setSearching] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <SafeAreaView
       style={{
@@ -37,7 +40,7 @@ export default function Home() {
         >
           Search any cooking recipe
         </Text>
-        <SearchBar setIsSearching={setSearching} />
+        <SearchBar setIsSearching={setSearching} setSearchQueryProp={setSearchQuery} />
         <ScrollViewSelect />
       </View>
       <View
@@ -47,7 +50,7 @@ export default function Home() {
         }}
       >
         {searching ? (
-          <ItemList />
+          <ItemList searchQueryTest={searchQuery} />
         ) : (
           <View>
             <Text

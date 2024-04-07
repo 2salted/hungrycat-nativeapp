@@ -1,4 +1,5 @@
-import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import { Image, Pressable, ScrollView, Text, View, useWindowDimensions } from "react-native";
+import { recipeData } from "./recipedata";
 
 export default function WeeklyRecipes() {
   let weeklyRecipesList = [
@@ -28,11 +29,15 @@ export default function WeeklyRecipes() {
     }
   }
 
-  shuffle(weeklyRecipesList);
-  newArr = weeklyRecipesList.splice(0, 2);
-
+  shuffle(recipeData);
+  newArr = recipeData.splice(0, 4);
+  console.log(
+    useWindowDimensions().height / 2
+  )
   return (
-    <ScrollView>
+    <ScrollView style={{
+      height: useWindowDimensions().height / 1.6
+    }}>
       <View>
         {newArr.map((recipe, index) => {
           return (

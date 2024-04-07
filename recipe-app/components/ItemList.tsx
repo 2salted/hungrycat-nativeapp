@@ -1,5 +1,4 @@
 import {
-  Dimensions,
   Image,
   ScrollView,
   Text,
@@ -15,7 +14,6 @@ type props = {
 
 export default function ItemList({ searchQueryTest }: props) {
   let matchedQuery = recipeData.filter((item) => item.title.toLowerCase().includes(searchQueryTest.toLowerCase()))
-  console.log(matchedQuery)
 
   return (
     <ScrollView style={{

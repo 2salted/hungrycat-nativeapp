@@ -54,6 +54,7 @@ export default function Home() {
           <View>
             <Text
               style={{
+                paddingTop: 15,
                 textAlign: "center",
                 fontSize: 22,
                 paddingBottom: 15,

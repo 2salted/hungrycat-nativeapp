@@ -3,6 +3,7 @@ import { recipeData } from "./recipedata";
 
 export default function WeeklyRecipes() {
   let newArr = [];
+  let arrTest = [];
 
   function shuffle(array: object[]) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -10,9 +11,12 @@ export default function WeeklyRecipes() {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-
-  shuffle(recipeData);
-  newArr = recipeData.splice(0, 3);
+  for (let i = 0; i < recipeData.length; i++) {
+    arrTest.push(recipeData[i])
+  }
+  shuffle(arrTest);
+  newArr = arrTest.slice(0, 3);
+  console.log(arrTest)
 
   return (
     <ScrollView style={{

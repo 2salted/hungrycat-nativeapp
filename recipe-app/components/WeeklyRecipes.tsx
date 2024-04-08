@@ -2,24 +2,6 @@ import { Image, Pressable, ScrollView, Text, View, useWindowDimensions } from "r
 import { recipeData } from "./recipedata";
 
 export default function WeeklyRecipes() {
-  let weeklyRecipesList = [
-    {
-      title: "Goldenrod Egg",
-      subtitles: "eggs",
-      image: require("../assets/images/goldenrodegg.webp"),
-    },
-    {
-      title: "Old-Fashioned Potato Salad",
-      subtitles: "potato salad recipe",
-      image: require("../assets/images/potato.webp"),
-    },
-    {
-      title: "Grilled Cheese Sandwich",
-      subtitles: "grilled cheese",
-      image: require("../assets/images/grilledcheesesandwich.webp"),
-    },
-  ];
-
   let newArr = [];
 
   function shuffle(array: object[]) {
@@ -30,13 +12,11 @@ export default function WeeklyRecipes() {
   }
 
   shuffle(recipeData);
-  newArr = recipeData.splice(0, 4);
-  console.log(
-    useWindowDimensions().height / 2
-  )
+  newArr = recipeData.splice(0, 3);
+
   return (
     <ScrollView style={{
-      height: useWindowDimensions().height / 1.6
+      height: useWindowDimensions().height / 1.7
     }}>
       <View>
         {newArr.map((recipe, index) => {

@@ -15,7 +15,6 @@ type props = {
 
 export default function ItemList({ searchQueryTest }: props) {
   let matchedQuery = recipeData.filter((item) => item.title.toLowerCase().includes(searchQueryTest.toLowerCase()));
-
   return (
     <ScrollView style={{
       height: useWindowDimensions().height / 1.5,

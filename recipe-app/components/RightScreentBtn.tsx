@@ -1,9 +1,6 @@
 import {
-  Image,
   Pressable,
   SafeAreaView,
-  Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
@@ -24,6 +21,7 @@ export default function RightScreenBtn() {
           <FontAwesome
             style={{
               fontSize: 40,
+              paddingBottom: 6
             }}
             name="user-o"
           />

@@ -15,8 +15,7 @@ export default function WeeklyRecipes() {
     arrTest.push(recipeData[i])
   }
   shuffle(arrTest);
-  newArr = arrTest.slice(0, 3);
-  console.log(arrTest)
+  newArr = arrTest.slice(0, 4);
 
   return (
     <ScrollView style={{

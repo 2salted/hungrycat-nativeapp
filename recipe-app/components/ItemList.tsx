@@ -1,28 +1,33 @@
 import {
   Image,
+  Pressable,
   ScrollView,
   Text,
-  TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
 import { recipeData } from "./recipedata";
+import { router } from "expo-router";
 
 type props = {
   searchQueryTest: string;
 }
 
 export default function ItemList({ searchQueryTest }: props) {
-  let matchedQuery = recipeData.filter((item) => item.title.toLowerCase().includes(searchQueryTest.toLowerCase()))
-  console.log(matchedQuery)
+  let matchedQuery = recipeData.filter((item) => item.title.toLowerCase().includes(searchQueryTest.toLowerCase()));
 
   return (
     <ScrollView style={{
-      height: useWindowDimensions().height / 1.5
+      height: useWindowDimensions().height / 1.5,
+      width: useWindowDimensions().width,
     }}>
       {matchedQuery.map((item, index) => {
         return (
-          <TouchableOpacity key={index}>
+          <Pressable key={index} onPress={() => {
+            if (item.linkID) {
+              router.push(`/searchpage/${item.linkID}`)
+            }
+          }}>
             <View style={{
               flexDirection: 'row',
               width: 210,
@@ -48,7 +53,7 @@ export default function ItemList({ searchQueryTest }: props) {
                 }}>{item.titleDescription}</Text>
               </View>
             </View>
-          </TouchableOpacity>
+          </Pressable>
         )
       })}
     </ScrollView>

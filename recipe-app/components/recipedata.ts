@@ -19,6 +19,7 @@ let recipeData = [
     carbs: "30g",
     protein: "27g",
     image: require("../assets/images/grilledcheesesandwich.webp"),
+    linkID: "grilledcheese",
   },
   {
     title: "Old-Fashioned Potato Salad",
@@ -45,6 +46,7 @@ let recipeData = [
     carbs: "31g",
     protein: "6g",
     image: require("../assets/images/potato.webp"),
+    linkID: "potatosalad",
   },
   {
     title: "Teriyaki Chicken Wings",
@@ -69,6 +71,7 @@ let recipeData = [
     carbs: "30g",
     protein: "21g",
     image: require("../assets/images/chickenwings.webp"),
+    linkID: "chickenwings",
   },
   {
     title: "Texas Pulled Pork",
@@ -99,36 +102,7 @@ let recipeData = [
     carbs: "46g",
     protein: "32g",
     image: require("../assets/images/pulledPork.webp"),
-  },
-  {
-    title: "Texas Pulled Pork",
-    titleDescription:
-      "This Texas-style pulled pork recipe has a tangy barbeque sauce that's easy to make in the slow cooker. I like to serve the shredded pork on toasted buttered rolls. My family's favorite!",
-    prepTime: "15 mins",
-    cookingTime: "5 hours",
-    totalTime: "5 hrs 15 mins",
-    servings: "8",
-    ingredients: [
-      "1 teaspoon vegetable oil",
-      "1 (4 pound) pork shoulder roast",
-      "1 cup barbeque sauce",
-      "½ cup apple cider vinegar",
-      "½ cup chicken broth",
-      "¼ cup light brown sugar",
-      "1 tablespoon prepared yellow mustard",
-      "1 tablespoon Worcestershire sauce",
-      "1 tablespoon chili powder",
-      "1 extra large onion, chopped",
-      "2 large cloves garlic, crushed",
-      "1 ½ teaspoons dried thyme",
-      "8 hamburger buns, split",
-      "2 tablespoons butter, or as needed",
-    ],
-    fat: "23g",
-    calories: "528",
-    carbs: "46g",
-    protein: "32g",
-    image: require("../assets/images/pulledPork.webp"),
+    linkID: "pulledpork",
   },
 ];
 

@@ -24,7 +24,7 @@ export default function ItemList({ searchQueryTest }: props) {
         return (
           <Pressable key={index} onPress={() => {
             if (item.linkID) {
-              router.push(`/searchpage/${item.linkID}`)
+              router.push(`/${item.linkID}`)
             }
           }}>
             <View style={{

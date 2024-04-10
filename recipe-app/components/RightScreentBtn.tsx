@@ -20,8 +20,7 @@ export default function RightScreenBtn() {
         <Pressable>
           <FontAwesome
             style={{
-              fontSize: 40,
-              paddingBottom: 6
+              fontSize: 36,
             }}
             name="user-o"
           />

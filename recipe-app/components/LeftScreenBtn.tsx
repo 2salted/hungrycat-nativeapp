@@ -16,7 +16,7 @@ export default function LeftScreenBtn() {
         <Pressable>
           <FontAwesome
             style={{
-              fontSize: 40,
+              fontSize: 36,
             }}
             name="bars"
           />

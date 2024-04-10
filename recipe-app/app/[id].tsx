@@ -83,7 +83,9 @@ export default function recipepage() {
                         <View key={index} style={{
                           padding: 5
                         }}>
-                          <Text>{ingredient}</Text>
+                          <Text style={{
+                            textAlign: "center"
+                          }}>{ingredient}</Text>
                         </View>
                       )
                     })}

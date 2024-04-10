@@ -12,7 +12,6 @@ import ItemList from "@/components/ItemList";
 export default function Home() {
   const [searching, setSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-
   return (
     <SafeAreaView
       style={{
@@ -46,7 +45,7 @@ export default function Home() {
           paddingHorizontal: 15,
         }}
       >
-        {searching ? (
+        {searching && searchQuery ? (
           <ItemList searchQueryTest={searchQuery} />
         ) : (
           <View>

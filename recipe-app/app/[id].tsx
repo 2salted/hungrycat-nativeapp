@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, Text, View, useWindowDimensions } from "react-native";
+import { Image, SafeAreaView, ScrollView, Text, View, useWindowDimensions } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
 import RightScreenBtn from "@/components/RightScreentBtn";
 import { recipeData } from "@/components/recipedata";
@@ -7,7 +7,7 @@ export default function recipepage() {
   const params = useLocalSearchParams();
 
   return (
-    <SafeAreaView style={{
+    <ScrollView style={{
       width: useWindowDimensions().width,
       height: useWindowDimensions().height,
       backgroundColor: "white"
@@ -72,11 +72,28 @@ export default function recipepage() {
                     <Text style={{ padding: 6, textAlign: "center", flexBasis: '50%' }}>servings: {item.servings}</Text>
                   </View>
                 </View>
+                <View>
+                  <Text style={{
+                    fontSize: 20,
+                    textAlign: "center"
+                  }}>Ingredients:</Text>
+                  <View>
+                    {item.ingredients.map((ingredient, index) => {
+                      return (
+                        <View key={index} style={{
+                          padding: 5
+                        }}>
+                          <Text>{ingredient}</Text>
+                        </View>
+                      )
+                    })}
+                  </View>
+                </View>
               </View>
             )
           }
         })
       }
-    </SafeAreaView>
+    </ScrollView>
   )
 }

@@ -75,7 +75,8 @@ export default function recipepage() {
                 <View>
                   <Text style={{
                     fontSize: 20,
-                    textAlign: "center"
+                    textAlign: "center",
+                    paddingBottom: 8
                   }}>Ingredients:</Text>
                   <View>
                     {item.ingredients.map((ingredient, index) => {
@@ -84,12 +85,37 @@ export default function recipepage() {
                           padding: 5
                         }}>
                           <Text style={{
-                            textAlign: "center"
+                            textAlign: "center",
+                            fontSize: 15
                           }}>{ingredient}</Text>
                         </View>
                       )
                     })}
                   </View>
+                </View>
+                <View>
+                  <View style={{
+                    paddingTop: 20
+                  }}>
+                    <Text style={{
+                      fontSize: 20,
+                      textAlign: "center"
+                    }}>Nutrition Facts:</Text>
+                    <View style={{
+                      padding: 10,
+                      margin: 20,
+                      flexWrap: 'wrap',
+                      flexDirection: "row",
+                      borderWidth: 1,
+                      borderRadius: 20,
+                    }}>
+                      <Text style={{ padding: 6, textAlign: "center", flexBasis: '50%' }}>Calories: {item.calories}</Text>
+                      <Text style={{ padding: 6, textAlign: "center", flexBasis: '50%' }}>Fat: {item.fat}</Text>
+                      <Text style={{ padding: 6, textAlign: "center", flexBasis: '50%' }}>Carbs: {item.carbs}</Text>
+                      <Text style={{ padding: 6, textAlign: "center", flexBasis: '50%' }}>Protein: {item.protein}</Text>
+                    </View>
+                  </View>
+
                 </View>
               </View>
             )
